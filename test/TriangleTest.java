@@ -1,4 +1,3 @@
-import java.awt.Polygon;
 import java.util.ArrayList;
 
 import org.junit.Test;
