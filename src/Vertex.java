@@ -1,8 +1,6 @@
 
 public class Vertex {
 
-	private final double TOLERANCE = 1.0e-5;
-	
 	private double x = 0.0;
 	private double y = 0.0;
 
@@ -37,10 +35,10 @@ public class Vertex {
 		
 		Vertex other = (Vertex) obj;
 		
-		if (Math.abs(x - other.x) > TOLERANCE)
+		if (! NumbersUtils.areEqual(x, other.x))
 			return false;
 		
-		if (Math.abs(y - other.y) > TOLERANCE)
+		if (! NumbersUtils.areEqual(y, other.y))
 			return false;
 		
 		return true;

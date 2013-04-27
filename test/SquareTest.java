@@ -16,4 +16,16 @@ public class SquareTest {
 		Square square = new Square(new Vertex(0.0, 0.0), new Vertex(0.0, 1.0), 
 									new Vertex(1.0, 1.0), new Vertex(2.0, 0.0));
 	}
+	
+	@Test
+	public void whenItIsActuallyASquareNoExceptionIsThrown() {
+		try {
+			Square square = new Square(new Vertex(0.0, 0.0), new Vertex(0.0, 1.0), 
+									new Vertex(1.0, 1.0), new Vertex(1.0, 0.0));
+		} catch (NotEnoughVerticesException e) {
+			fail("it was a square..");
+		} catch (NotSquareException e) {
+			fail("it was a square..");
+		}
+	}
 }

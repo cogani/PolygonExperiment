@@ -12,26 +12,12 @@ public class Square extends Polygon2D {
 	}
 
 	boolean allSidesEqual() {
-		
-		Vertex [] verticesArray =  (Vertex[]) vertices.toArray(new Vertex[0]);
-		
-		double side1 = verticesArray[0].distance(verticesArray[1]);
-		System.out.println(side1);
-		double side2 = verticesArray[1].distance(verticesArray[2]);
-		System.out.println(side2);
-		double side3 = verticesArray[2].distance(verticesArray[3]);
-		System.out.println(side2);
-		double side4 = verticesArray[3].distance(verticesArray[0]);
-		System.out.println(side4);
-		
-		if(Math.abs(side1 - side2) > 1.0e-5)
-			return false;
-		
-		if(Math.abs(side1 - side3) > 1.0e-5)
-			return false;
-		
-		if(Math.abs(side1 - side4) > 1.0e-5)
-			return false;
+		Side firstSide = sides.get(0);
+		for(int i = 1; i<sides.size(); ++i) {
+			Side side = sides.get(i);
+			if(! firstSide.hasSameLength(side))
+				return false;
+		}
 		
 		return true;
 	}
