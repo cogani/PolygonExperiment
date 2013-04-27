@@ -1,11 +1,21 @@
-import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 
-public class Polygon2D {
+public abstract class Polygon2D {
+	
+	protected int differentVertices;
+	protected Set<Vertex> vertices;
+	
+	public Polygon2D(Vertex ... vertices) {
+       this.vertices = new LinkedHashSet<Vertex>();
 
-	public Polygon2D(ArrayList<Vertex> vertices) {
-		if(vertices.size() < 3)
-			throw new NotEnoughVerticesException();
+       for (Vertex vertex : vertices)
+           this.vertices.add(vertex);
+       
+       differentVertices = this.vertices.size();
+       
+       if(differentVertices < 3)
+    	   throw new NotEnoughVerticesException();
 	}
-
 }
