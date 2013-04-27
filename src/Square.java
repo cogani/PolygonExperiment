@@ -7,18 +7,7 @@ public class Square extends Polygon2D {
 		if(differentVertices != 4)
 			throw new NotEnoughVerticesException();
 		
-		if(! allSidesEqual())
+		if(! isRegular())
 			throw new NotSquareException();
-	}
-
-	boolean allSidesEqual() {
-		Side firstSide = sides.get(0);
-		for(int i = 1; i<sides.size(); ++i) {
-			Side side = sides.get(i);
-			if(! firstSide.hasSameLength(side))
-				return false;
-		}
-		
-		return true;
 	}
 }

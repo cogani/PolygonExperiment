@@ -18,6 +18,17 @@ public abstract class Polygon2D {
 
 		createSides(verticesSet);
 	}
+	
+	public boolean isRegular() {
+		Side firstSide = sides.get(0);
+		for(int i = 1; i<sides.size(); ++i) {
+			Side side = sides.get(i);
+			if(! firstSide.hasSameLength(side))
+				return false;
+		}
+		
+		return true;
+	}
 
 	private Set<Vertex> obtainDifferentVertices(Vertex... vertices) {
 		Set<Vertex> verticesSet = new LinkedHashSet<Vertex>();
