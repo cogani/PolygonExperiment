@@ -1,0 +1,9 @@
+1 - Los nombres de los metodos de test son demasiado largos, esta bien añadir semantica pero sin hacerla redundante, ya esta en eun contexto asi que hay que hablar lo suficiente para que quede claro pero no mas.
+
+2 - Vertex es un excelente Value Object, puedes experimentar con la generacion de vertices a una distancia adecuada o cosas asi.
+
+3 - En Polygon2d, queda como oculta la reduccion de los vertices a un set para evitar los repetidos, expresalo en su propio metodo o con semantica, obtain difeerent vertices no me lo dice
+
+4 - Tambien debeis evitar sobre todo en los test poner new dentro de un new, cosas como new Square(new Vertex(x,y)...
+
+5 - isRegular resulta confuso, inicializando la variable de retorno a true y con un condicional invertido, dale una vuelta para conseguir que sea mas expresivo, consejo empieza por igualar a false."
